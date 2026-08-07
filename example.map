@@ -1,0 +1,280 @@
+EXAMPLE .MAP FILE OUTPUT TAKEN FROM AN STM32 PROJECT
+
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+                              build/inc/startup_stm32f401xe.o (__libc_init_array)
+
+Merging object attributes
+
+
+Discarded input sections
+
+ .debug_info    0x00000000      0x110 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_abbrev  0x00000000       0xcf /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_loclists
+                0x00000000       0x6c /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_aranges
+                0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_rnglists
+                0x00000000       0x13 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_line    0x00000000      0x12c /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_str     0x00000000      0x21c /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .comment       0x00000000       0x1f /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .debug_frame   0x00000000       0x2c /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ .ARM.attributes
+                0x00000000       0x2e /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20000000         0x00018000         xrw
+ROM              0x08000000         0x00080000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD build/inc/startup_stm32f401xe.o
+LOAD build/src/main.o
+                0x20018000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x194
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x194 build/inc/startup_stm32f401xe.o
+                0x08000000                g_pfnVectors
+                0x08000194                        . = ALIGN (0x4)
+
+.text           0x08000194       0xbc
+                0x08000194                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000194       0x14 build/inc/startup_stm32f401xe.o
+ .text          0x080001a8        0x8 build/src/main.o
+                0x080001a8                main
+ .text          0x080001b0        0x0 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ *(.text*)
+ .text.Reset_Handler
+                0x080001b0       0x50 build/inc/startup_stm32f401xe.o
+                0x080001b0                Reset_Handler
+ .text.Default_Handler
+                0x08000200        0x2 build/inc/startup_stm32f401xe.o
+                0x08000200                RTC_Alarm_IRQHandler
+                0x08000200                EXTI2_IRQHandler
+                0x08000200                DebugMon_Handler
+                0x08000200                SPI4_IRQHandler
+                0x08000200                TIM1_CC_IRQHandler
+                0x08000200                DMA2_Stream5_IRQHandler
+                0x08000200                HardFault_Handler
+                0x08000200                DMA1_Stream5_IRQHandler
+                0x08000200                SysTick_Handler
+                0x08000200                PVD_IRQHandler
+                0x08000200                SDIO_IRQHandler
+                0x08000200                TAMP_STAMP_IRQHandler
+                0x08000200                PendSV_Handler
+                0x08000200                NMI_Handler
+                0x08000200                EXTI3_IRQHandler
+                0x08000200                TIM1_UP_TIM10_IRQHandler
+                0x08000200                I2C3_ER_IRQHandler
+                0x08000200                EXTI0_IRQHandler
+                0x08000200                I2C2_EV_IRQHandler
+                0x08000200                DMA1_Stream2_IRQHandler
+                0x08000200                FPU_IRQHandler
+                0x08000200                UsageFault_Handler
+                0x08000200                DMA2_Stream2_IRQHandler
+                0x08000200                SPI1_IRQHandler
+                0x08000200                TIM1_BRK_TIM9_IRQHandler
+                0x08000200                DMA2_Stream3_IRQHandler
+                0x08000200                USART6_IRQHandler
+                0x08000200                DMA2_Stream0_IRQHandler
+                0x08000200                TIM4_IRQHandler
+                0x08000200                I2C1_EV_IRQHandler
+                0x08000200                DMA1_Stream6_IRQHandler
+                0x08000200                DMA1_Stream1_IRQHandler
+                0x08000200                TIM3_IRQHandler
+                0x08000200                RCC_IRQHandler
+                0x08000200                Default_Handler
+                0x08000200                EXTI15_10_IRQHandler
+                0x08000200                ADC_IRQHandler
+                0x08000200                DMA1_Stream7_IRQHandler
+                0x08000200                TIM5_IRQHandler
+                0x08000200                DMA2_Stream7_IRQHandler
+                0x08000200                I2C3_EV_IRQHandler
+                0x08000200                EXTI9_5_IRQHandler
+                0x08000200                RTC_WKUP_IRQHandler
+                0x08000200                SPI2_IRQHandler
+                0x08000200                MemManage_Handler
+                0x08000200                DMA1_Stream0_IRQHandler
+                0x08000200                SVC_Handler
+                0x08000200                EXTI4_IRQHandler
+                0x08000200                WWDG_IRQHandler
+                0x08000200                TIM2_IRQHandler
+                0x08000200                OTG_FS_WKUP_IRQHandler
+                0x08000200                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08000200                EXTI1_IRQHandler
+                0x08000200                USART2_IRQHandler
+                0x08000200                I2C2_ER_IRQHandler
+                0x08000200                DMA2_Stream1_IRQHandler
+                0x08000200                FLASH_IRQHandler
+                0x08000200                DMA2_Stream4_IRQHandler
+                0x08000200                BusFault_Handler
+                0x08000200                USART1_IRQHandler
+                0x08000200                OTG_FS_IRQHandler
+                0x08000200                SPI3_IRQHandler
+                0x08000200                DMA1_Stream4_IRQHandler
+                0x08000200                I2C1_ER_IRQHandler
+                0x08000200                DMA2_Stream6_IRQHandler
+                0x08000200                DMA1_Stream3_IRQHandler
+ *fill*         0x08000202        0x2 
+ .text.__libc_init_array
+                0x08000204       0x4c /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+                0x08000204                __libc_init_array
+ *(.glue_7)
+ .glue_7        0x08000250        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x08000250        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x08000250                        . = ALIGN (0x4)
+                0x08000250                        _etext = .
+
+.vfp11_veneer   0x08000250        0x0
+ .vfp11_veneer  0x08000250        0x0 linker stubs
+
+.v4_bx          0x08000250        0x0
+ .v4_bx         0x08000250        0x0 linker stubs
+
+.iplt           0x08000250        0x0
+ .iplt          0x08000250        0x0 build/inc/startup_stm32f401xe.o
+
+.rel.dyn        0x08000250        0x0
+ .rel.iplt      0x08000250        0x0 build/inc/startup_stm32f401xe.o
+
+.rodata         0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x08000250                        . = ALIGN (0x4)
+
+.ARM.extab      0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x08000250                        . = ALIGN (0x4)
+
+.ARM            0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+                0x08000250                        __exidx_start = .
+ *(.ARM.exidx*)
+                0x08000250                        __exidx_end = .
+                0x08000250                        . = ALIGN (0x4)
+
+.preinit_array  0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+                0x08000250                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x08000250                        PROVIDE (__preinit_array_end = .)
+                0x08000250                        . = ALIGN (0x4)
+
+.init_array     0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+                0x08000250                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                0x08000250                        PROVIDE (__init_array_end = .)
+                0x08000250                        . = ALIGN (0x4)
+
+.fini_array     0x08000250        0x0
+                0x08000250                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x08000250                        . = ALIGN (0x4)
+                0x08000250                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x08000250
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 build/inc/startup_stm32f401xe.o
+ .data          0x20000000        0x0 build/src/main.o
+ .data          0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ *(.data*)
+ *(.RamFunc)
+ *(.RamFunc*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000250
+ .igot.plt      0x20000000        0x0 build/inc/startup_stm32f401xe.o
+                0x20000000                        . = ALIGN (0x4)
+
+.bss            0x20000000        0x0 load address 0x08000250
+                0x20000000                        _sbss = .
+                0x20000000                        __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000000        0x0 build/inc/startup_stm32f401xe.o
+ .bss           0x20000000        0x0 build/src/main.o
+ .bss           0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-init.o)
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+                0x20000000                        __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x08000250
+                0x20000000                        . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x20000200                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                        . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x21 build/inc/startup_stm32f401xe.o
+ .ARM.attributes
+                0x00000021       0x2e build/src/main.o
+OUTPUT(build/main.elf elf32-littlearm)
+LOAD linker stubs
+LOAD /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a
+LOAD /usr/lib/gcc/arm-none-eabi/16.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libm.a
+LOAD /usr/lib/gcc/arm-none-eabi/16.1.0/thumb/v7e-m/nofp/libgcc.a
+
+.debug_info     0x00000000       0x88
+ .debug_info    0x00000000       0x88 build/src/main.o
+
+.debug_abbrev   0x00000000       0x4b
+ .debug_abbrev  0x00000000       0x4b build/src/main.o
+
+.debug_aranges  0x00000000       0x20
+ .debug_aranges
+                0x00000000       0x20 build/src/main.o
+
+.debug_line     0x00000000       0x3d
+ .debug_line    0x00000000       0x3d build/src/main.o
+
+.debug_str      0x00000000       0xeb
+ .debug_str     0x00000000       0xeb build/src/main.o
+                                0x11f (size before relaxing)
+
+.comment        0x00000000       0x1e
+ .comment       0x00000000       0x1e build/src/main.o
+                                 0x1f (size before relaxing)
+
+.debug_frame    0x00000000       0x28
+ .debug_frame   0x00000000       0x28 build/src/main.o
+
+
